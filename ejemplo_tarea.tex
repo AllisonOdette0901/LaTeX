@@ -1,0 +1,382 @@
+\documentclass[12pt]{article}
+%\documentclass[titlepage,12pt]{article}
+% definimos tamaño de fuente 12pt
+% PAQUETERÍAS 
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} %modifica el tamaño de márgenes
+\usepackage{amssymb,latexsym,amsmath,amsthm,amsfonts} %matemáticas
+\usepackage{multicol} %para tablas
+\usepackage{multirow} % para tablas
+\usepackage[utf8]{inputenc} % acentos, tildes, etc
+\RequirePackage[spanish]{babel} % identifica que escribimos en español
+\usepackage{graphicx} % utilizar acciones de imágenes
+\usepackage{fancyhdr} % estilo
+%\usepackage{xcolor} % colores
+\usepackage[table,xcdraw]{xcolor} %colores para tablas
+\usepackage{cellspace} %tablas
+\usepackage{caption,subcaption} % permite usar subfigures
+\usepackage{listings} % colocar código
+\usepackage{hyperref} % enlaces de internet
+\usepackage{booktabs}
+\usepackage{parskip} %espacio entre líneas
+% información del equipo y número de tarea
+\title{\textbf{TAREA número 1. Equipo 1}}
+\author{Integrante 1\\ Integrante 2\\ Integrante 3}
+\date{}
+
+% CUERPO DEL DOCUMENTO (DONDE ESCRIBIMOS TODO Y AÑADIMOS IMÁGENES, TABLAS, ETC)
+\begin{document}
+\maketitle % imprime la información
+
+% secciones sin numerar ya que tiene un asterisco
+\section*{\\Problema 1}
+Este es el primer problema que tenemos que resolver, damos un ejemplo de la tabla de datos:
+%\subsection*{Ejercicio 1.1}
+
+
+\begin{table}[h]
+ % !: indica a latex que tome en cuenta los parámetros que le siguen
+ % h: indicamos que la tabla aparezca aquí (here), justo en esta parte del documento.
+ % b: (bottom) tratará de colocar la tabla en la parte inferior de la página
+ % t: (top) " " parte superior de la página.
+        \centering % alineamos hacia el centro
+        %\flushleft % alineamos hacia la izquierda
+        %\flushright % alineamos hacia la derecha
+        \small % minimizamos el tamaño de letra
+        \begin{tabular}{|c|c|c|c|c|c|c|} 
+        % # columnas y el símbolo | delimita con líneas verticales...(3)*
+        % || doble línea vertical
+        \hline
+          Alimento &Ración&Energía&Proteínas& Calcio&Precio& Raciones\\
+          & & (Kcal)& (g)& (mg)& (\$)& máximas\\
+          \hline\hline %doble línea
+            Avena & 28g& 110& 4& 2& 3& 4\\
+            \hline %una línea
+            Pollo & 100g& 205& 32& 12& 24& 3\\
+            \hline
+            Huevos& 2pz& 160& 13& 54& 13& 2\\
+            \hline
+            Leche& 250ml& 150& 8& 285& 9& 8\\
+            \hline
+            Pastel& 170g& 420& 4& 22& 20& 2\\
+            \hline
+            Frijoles& 260g& 260& 14& 80& 19& 2\\
+            \hline
+        \end{tabular}
+        \caption{Otro problema de dieta} % descripción de tabla y numera
+        %\label{nombre-para-identificar} 
+    \end{table}
+
+Ahora vamos a escribir como se plantearía un modelo, con su función objetivo, las restricciones, la condición de no negatividad de las variables.\\ %salto de línea
+Entonces planteamos lo siguiente:
+
+\begin{equation*}
+\begin{array}{lll}
+    \mbox{Minimizar}
+    & \sum_{i=1}^{n}f(\mbox{\boldmath{$x_i$}}) &\\
+    \mbox{sujeto a: }
+    & g_i(\mbox{\boldmath{$x$}}) \leq 0; &
+    i=1,\ldots,m\\
+    & g_i(\mbox{\boldmath{$x$}}) \geq 0; &
+    i=1,\ldots,m\\
+    & h_k(\mbox{\boldmath{$x$}}) = 0; &
+    k=1,\ldots,p\\
+    & \forall x_j \geq 0; & j=1,\ldots,n
+    \end{array}
+\end{equation*}
+
+Colocamos una imagen representando el espacio de soluciones, elaborada en Geogebra:
+
+\begin{figure}[ht] %estamos utilizando here y top ya que se posiciono arriba, pero podemos sólo utilizar h 
+\centering
+\includegraphics[width=.85\textwidth]{Ejercicio 2.2.png}
+\caption{Cuarto punto}
+\label{cuarta}
+\end{figure}
+
+
+{\color{red}Solución: }\\
+La solución del problema puede escribir así.
+
+O si ocupamos dos imágenes
+
+\begin{figure}[ht] %englobamos las imágenes
+\centering
+    \begin{subfigure}[h]{0.45\textwidth} % primera imagen 
+        \centering
+        \includegraphics[width=0.85\textwidth]{Ejercicio 2.2.png}
+        \caption {Está es la imagen 1}
+        \label{fig: imagen 1}
+    \end{subfigure}
+    \hspace{0.1cm} % espaciado entre imágenes
+    \begin{subfigure}[h]{0.45\textwidth} % segunda imagen 
+        \centering
+        \includegraphics[width=0.65\textwidth]{frog.jpg}
+        \caption {Está es la imagen 2}
+        \label{fig: imagen 2}
+    \end{subfigure}
+ \caption{Estamos mostrando el ejemplo de dos imágenes en un arreglo.}
+ \label{dos imágenes}
+\end{figure}
+
+\newpage
+
+\section*{\\Expresiones matemáticas}
+%--- Algunas operaciones
+$$ \sum_{i=1}^{N} x_i$$
+$$ \prod_{i=1}^{n}$$
+\[\int_a^b x^2 dx\] % si necesitamos más de una integral agrega otra i -> iint
+\[\dfrac{n^2}{n^2(n+z)^2}\]
+
+$\frac{1}{k} \log_{2} c(f)$ es la medida \dots
+\[\frac{1}{2}\frac{1+x}{1-x}+\frac{x^2}{(x-1)^3}+\frac{(x^2+1)^{\frac{1}{3}}}{y_2}-\frac{x-y}{1+\frac{1}{y}}\]
+\[(a+b)^{n}=\binom{n}{0} a^{n}+\tbinom{n}{1}a^{n-1}b+ \dots + \binom{n}{n}n^n\]
+
+\[ \cfrac{1}{\sqrt{2}+ \cfrac[l]{2}{\sqrt{2}+ \cfrac[r]{3}{\sqrt{2}+ \dots }}} \]
+% los valores l o r sirven para que los numeradores aparezcan justificados respectivamente
+\[\sum_{i=1}^\infty \frac{1}{n^2}=\frac{1}{n^2}=\frac{pi^2}{6}\]
+$$\sqrt[3]{2x}$$
+\[\lim_{x \to 0}\] %una forma 
+\[\underset{x\to 0}{\lim}\] % segunda forma de escribir el límite
+\par 
+% ------ TAMAÑOS DE SIMBOLOS
+Podemos también notar que a veces el tamaño de los paréntesis o llaves no son los adecuados para nuestras operaciones, por lo que podemos optar por escribir lo siguiente:
+\[(\frac{1}{2})\]
+% el valor l significa left y r right, puede ser big o Big depende el tamaño
+\[\Bigl(\frac{1}{2} \Bigr)\]
+\[\Bigl\{\frac{1}{2} \Bigr\}\]
+\[\Bigl[\frac{1}{2} \Bigr]\]
+\par
+%------ ALINEACIÓN EN OPERACIONES
+Ahora para alineación de múltiples ecuaciones podemos usar los siguientes ambientes:\\
+Opción 1:
+% \nonumber elimina la numeración automática de la ecuación 
+\begin{gather}
+    2x_{1}+3x_{2}\leq 12\\
+    2x_{1} - x_{2} \leq 9 \nonumber \\
+    x_{1},x_{2} \geq 0
+\end{gather}
+
+Opción 2: está opción alineará respecto al símbolo que este entre \& simbol \&
+\begin{eqnarray*}
+    2x_{1}+3x_{2} &\leq& 12 \\
+    2x_{1} - x_{2} &=& 9 \\
+    x_{1},x_{2} &\geq& 0
+\end{eqnarray*}
+Opción 3: con el comando \textbf{aling} y el uso de \&, si queremos que no estén numeradas usamos \textbf{align*}:
+\begin{align*}
+    2x_{1}+3x_{2} \leq 12\\
+    2x_{1} - x_{2} = 9 \\
+    x_{1},x_{2} \geq 0
+\end{align*}
+\par
+Ahora vamos a ver la creación de matrices.\\
+Opción 1:
+\begin{equation}
+    \begin{matrix}
+     3 &  2 \\
+     4 & 5 \\
+    \end{matrix}
+\end{equation}
+Opción 2: el uso de paréntesis, estos se adaptan automáticamente
+\begin{equation*}
+    \begin{pmatrix}
+     x_{11} & x_{12} \\
+     x_{21} & x_{22} 
+    \end{pmatrix}
+\end{equation*}
+
+\begin{equation}
+% definimos la primera matriz
+    \begin{pmatrix}
+     x_{11} & x_{12} \\
+     x_{21} & x_{22} 
+    \end{pmatrix}
+    %definimos la segunda
+     \begin{pmatrix}
+     x_{11} & x_{12} \\
+     x_{21} & x_{22} 
+    \end{pmatrix}
+\end{equation}
+
+Opción 3: el uso de corchetes.
+\begin{equation}
+   \begin{bmatrix}
+    x_{11} & x_{12} & x_{13} \\
+     x_{21} & x_{22} & x_{23}
+    \end{bmatrix}
+\end{equation}
+Opción 4:
+\begin{equation}
+   \begin{vmatrix}
+     x_{11} & x_{12} & x_{13} \\
+     x_{21} & x_{22} & x_{23}\\
+     x_{31} & x_{32} & x_{33}
+    \end{vmatrix}
+\end{equation}
+
+Opción 5:
+\begin{equation}
+   \begin{Vmatrix}
+     x_{11} & x_{12} & x_{13} \\
+     x_{21} & x_{22} & x_{23}\\
+     x_{31} & x_{32} & x_{33}
+    \end{Vmatrix}
+\end{equation}
+
+\subsection{Letras del alfabeto griego}
+\[ \alpha, A, \beta, B, \gamma, \Gamma, \delta, \Delta, \theta, \Theta, \dots
+\]
+
+
+\section{Listas y numeración}
+\subsection{Listas no numeradas: Entorno itemize}
+Veamos un ejemplo de una lista de objetos, esta es la manera más sencilla y recurrente para generar una lista no numerada.
+\begin{itemize}
+    \item Este es el primer objeto
+    \item Observemos que la indentación es generada automáticamente sin importar el tamaño del texto.
+    \item Recuerda usar la instrucción item para numerar cada elemento de la lista.
+\end{itemize}
+Ahora vamos a probar viendo una lista anidada:
+\begin{itemize}
+    \item 1ra entrada del primer nivel
+    \item 2da entrada del primer nivel
+    \begin{itemize}
+        \item 1ra entrada del segundo nivel
+        \item 2da entrada del segundo nivel
+        \begin{itemize}
+            \item 1ra entrada del tercer nivel
+            \item 2da entrada del tercer nivel
+            \begin{itemize}
+                \item 1ra entrada del cuarto nivel
+                \item 2da entrada del cuarto nivel
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+Observemos que los iconos se generan por defecto, esto por la paquetería de \textbf{babel}. Pero veamos un ejemplo si queremos cambiar el tipo de viñetas.
+
+{\renewcommand{\labelitemi}{$\triangleright$}
+\begin{itemize}
+\item Item 1
+\item Item 2
+\item Item 3
+\end{itemize}}
+
+\subsection{Listas numeradas: El entorno enumerate}
+Veamos el entorno \textbf{enumerate} con una lista simple y con una lista anidada y ver el cambio de numeración que se emplea en cada nivel.
+\begin{enumerate}
+    \item Este es el primer objeto
+    \item Observemos que la indentación es generada automáticamente sin importar el tamaño del texto.
+    \item Recuerda usar la instrucción item para numerar cada elemento de la lista.
+\end{enumerate}
+
+La lista anidada tendría una salida:
+\begin{enumerate}
+    \item 1ra entrada del primer nivel
+    \item 2da entrada del primer nivel
+    \begin{enumerate}
+        \item 1ra entrada del segundo nivel
+        \item 2da entrada del segundo nivel
+        \begin{enumerate}
+            \item 1ra entrada del tercer nivel
+            \item 2da entrada del tercer nivel
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\section{Definiciones de Teoremas}
+Primero vemos como escribir teoremas:
+\newtheorem{thm}{Teorema}
+\begin{thm}
+Este es un ejemplo del entorno
+para construir teoremas.
+\end{thm}
+\begin{thm}
+Este es un segundo teorema.
+\end{thm}
+
+Después vemos como escribir corolarios:
+\newtheorem{col}{Corolario}[thm]
+\begin{col}[Aranda, E. 2004]
+Este es un ejemplo del entorno
+para construir corolarios.
+\end{col}
+
+Y por ultimo como escribir unas notas:
+\newtheorem{rmk}{Nota}[section]
+\begin{rmk}
+Este es un ejemplo del entorno
+para construir notas.
+\end{rmk}
+
+\section*{Colocar código}
+
+\begin{lstlisting}
+import numpy as np
+    
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+    
+    #compute the bitwise xor matrix
+    M1 = bitxormatrix(genl1)
+    M2 = np.triu(bitxormatrix(genl2),1) 
+
+    for i in range(m-1):
+        for j in range(i+1, m):
+            [r,c] = np.where(M2 == M1[i,j])
+            for k in range(len(r)):
+                VT[(i)*n + r[k]] = 1;
+                VT[(i)*n + c[k]] = 1;
+                VT[(j)*n + r[k]] = 1;
+                VT[(j)*n + c[k]] = 1;
+                
+                if M is None:
+                    M = np.copy(VT)
+                else:
+                    M = np.concatenate((M, VT), 1)
+                
+                VT = np.zeros((n*m,1), int)
+    
+    return M
+\end{lstlisting}
+
+Para más ejemplos \url{https://es.overleaf.com/learn/latex/Code_listing}
+
+\newpage
+Un pequeño ejemplo de una tabla generada en la página que está referenciada en \ref{tab:mi_tabla}.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{ccccc}
+& \multicolumn{3}{c}{\textbf{Minutos por unidad}} &  \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+\textbf{Producto} & \textbf{Proceso 1} & \textbf{Proceso 2} & \textbf{Proceso 3} & \textbf{Utilidad diaria} \\ \hline
+1 & 10 & 6 & 8 & \$ 2 \\
+2 & 5 & 20 & 10 & \$ 3 \\ \hline
+\end{tabular}
+\caption{Prueba de tabla creada en \url{https://www.tablesgenerator.com}}
+\label{tab:mi_tabla}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[ht]
+\centering
+\caption{}
+\label{tab:my-table}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+\rowcolor[HTML]{EFEFEF} 
+{\color[HTML]{CB0000} \textbf{Tipo}} & {\color[HTML]{CB0000} \textbf{Producto 1}} & {\color[HTML]{CB0000} \textbf{Producto 2}} \\ \midrule
+1 & 58 unidades & 23 unidades \\
+2 & 67 unidades & 23 unidades \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}
