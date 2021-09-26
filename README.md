@@ -1,7 +1,7 @@
 # LaTeX
 Una breve introducción a LaTeX
 
-Este es un breve curso para elaborar una tarea, utilizando el editor de textos Overleaf, en donde se explican cómo se utilizan algunos de los ambientes más conocidos en el ámbito matemático. Se explican ambientes para la elaboración de tablas, insertar imágenes, creación de listas, entre otros.
+Este es un breve curso para elaborar una tarea, utilizando el editor de textos Overleaf, en donde se explican cómo se utilizan algunos de los ambientes más conocidos en el ámbito matemático. Se explican ambientes para la elaboración de tablas, insertar imágenes, creación de listas, entre otros. Se anexan dos archivos, un PDF explicando los siguientes capítulos que se escriben en la descripción y una carpeta .zip, la cual puede descargarse y utilizarse para edición.
 
 
 ## Contenido disponible
